@@ -70,7 +70,11 @@ public class LoadScene : MonoBehaviour
         SceneManager.LoadScene("Begin2P2");
         Speed.i = 1;
     }
+    public void Option()
+    {
+        SceneManager.LoadScene("Option");
+        Speed.i = 1;
+    }
 
-    
-   
+
 }

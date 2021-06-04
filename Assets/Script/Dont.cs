@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class Dont : MonoBehaviour
 {
-   void Awake()
+    private static Dont instance = null;
+    private AudioSource audio;
+
+    private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            return;
+        }
+        if (instance == this) return;
+        Destroy(gameObject);
     }
 }
